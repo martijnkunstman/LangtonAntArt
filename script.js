@@ -1,41 +1,17 @@
 
-/* closure compiler output
-
-var a = 0, b = 250, c = 250, e = document.getElementById("counter"), f = 0, g = document.getElementById("myCanvas"), h = g.getContext("2d");
-h.fillStyle = "blue";
-h.fillRect(0, 0, g.width, g.height);
-let dn = Date.now();
-function m() {
-  for (var k = h.getImageData(0, 0, 500, 500), d = k.data, l = 0; 1000000 > l; l++) {
-    255 == d[4 * b + 2E3 * c] ? (d[4 * b + 2E3 * c] = 0, d[4 * b + 2E3 * c + 1] = 0, d[4 * b + 2E3 * c + 2] = 0, a++, 3 < a && (a = 0)) : (d[4 * b + 2E3 * c] = 255, d[4 * b + 2E3 * c + 1] = 255, d[4 * b + 2E3 * c + 2] = 255, a--, 0 > a && (a = 3)), 0 == a ? (--b, 0 > b && (b = 499)) : 1 == a ? (--c, 0 > c && (c = 499)) : 2 == a ? (b += 1, 500 == b && (b = 0)) : 3 == a && (c += 1, 500 == c && (c = 0)), f++;
-  }
-  h.putImageData(k, 0, 0);
-  e.innerHTML = f;
-  requestAnimationFrame(m);//aa
-  if (f==1000000000)
-    {
-      document.getElementById("time").innerHTML=Date.now()-dn;//7888
-    }
-}
-requestAnimationFrame(m);
-
-*/
-
-
-
-let wh = 500;
+let wh = 600;
 let d = 0;
 let x = Math.round(wh / 2);
 let y = Math.round(wh / 2);
 let counterElement = document.getElementById("counter");
 let counter = 0;
-let stepsAtOnce = 100000;
-
-
+let stepsAtOnce = 1000;
 
 let dn = Date.now();
   
 const canvas = document.getElementById("myCanvas");
+canvas.width = wh;
+canvas.height = wh;
 const ctx = canvas.getContext("2d", { alpha: false, willReadFrequently:true });
 ctx.fillStyle = "blue";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -83,7 +59,7 @@ function step() {
       }
     }
     counter++;
-     if (counter==100000000)
+     if (counter==1000000)
     {
       document.getElementById("time").innerHTML=Date.now()-dn;//10958
     }
@@ -93,6 +69,4 @@ function step() {
   requestAnimationFrame(step);
 }
 
-requestAnimationFrame(step);
-
-
+step();
