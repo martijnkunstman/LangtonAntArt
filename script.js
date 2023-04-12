@@ -4,7 +4,7 @@ let x = Math.round(dimension / 2);
 let y = Math.round(dimension / 2);
 let counterElement = document.getElementById("counter");
 let counter = 0;
-let stepsAtOnce = 1000;
+let stepsAtOnce = 10000;
 
 let rules = "LRRRRRLLR";
 rules = "LR";
@@ -77,7 +77,12 @@ function step() {
     }
   }
   ctx.putImageData(id, 0, 0);
+
+  ctx.fillStyle = 'rgba(0,0,225,0.01)';
+  ctx.fillRect(0,0, dimension, dimension);
+
   counterElement.innerHTML = counter;
+
   requestAnimationFrame(step);
 }
 
