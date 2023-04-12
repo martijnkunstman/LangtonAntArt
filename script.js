@@ -2,8 +2,6 @@ let dimension = 900;
 let direction = 0;
 let x = Math.round(dimension / 2);
 let y = Math.round(dimension / 2);
-let counterElement = document.getElementById("counter");
-let counter = 0;
 let stepsAtOnce = 10000;
 
 let rules = "LRRRRRLLR";
@@ -71,18 +69,10 @@ function step() {
         y = 0;
       }
     }
-    counter++;
-    if (counter == 1000000) {
-      document.getElementById("time").innerHTML = Date.now() - dateNow;
-    }
   }
   ctx.putImageData(id, 0, 0);
-
   ctx.fillStyle = 'rgba(0,0,225,0.01)';
   ctx.fillRect(0,0, dimension, dimension);
-
-  counterElement.innerHTML = counter;
-
   requestAnimationFrame(step);
 }
 
