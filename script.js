@@ -18,6 +18,18 @@ rulesSelect.addEventListener("change", function () {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 });
 
+let dimensionSelect = document.getElementById("dimension");
+dimensionSelect.addEventListener("change", function () {
+  dimension = dimensionSelect.value;
+  canvas.width = dimension;
+  canvas.height = dimension;
+  ctx.fillStyle = "blue";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  x = Math.round(dimension / 2);
+  y = Math.round(dimension / 2);
+  direction = 0;
+});
+
 let stepsSelect = document.getElementById("stepsAtOnce");
 stepsSelect.addEventListener("change", function () {
   stepsAtOnce = stepsSelect.value;
