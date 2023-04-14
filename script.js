@@ -3,7 +3,7 @@ let direction = 0;
 let x = Math.round(dimension / 2);
 let y = Math.round(dimension / 2);
 let stepsAtOnce = 10000;
-let rules = "LRRRRRLLR";
+let rules = "RRLLLRLLLRRR";
 convertRules();
 
 let rulesSelect = document.getElementById("rules");
