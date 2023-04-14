@@ -1,11 +1,27 @@
-let dimension = 1500;
+let dimension = 1200;
 let direction = 0;
-let direction2 = 0;
+//let direction2 = 0;
 let x = Math.round(dimension / 2);
 let y = Math.round(dimension / 2);
 //let x2 = Math.round(dimension / 2);
 //let y2 = Math.round(dimension / 2);
 let stepsAtOnce = 10000;
+
+let rulesSelect = document.getElementById("rules");
+rulesSelect.addEventListener("change", function () {
+  rules = rulesSelect.value;
+  convertRules();
+  x = Math.round(dimension / 2);
+  y = Math.round(dimension / 2);
+  direction = 0;
+  ctx.fillStyle = "blue";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+});
+
+let stepsSelect = document.getElementById("stepsAtOnce");
+stepsSelect.addEventListener("change", function () {
+  stepsAtOnce = stepsSelect.value;
+});
 
 let rules = "LRRRRRLLR";
 rules = "LR";
@@ -83,8 +99,8 @@ function step() {
     }
   }
   ctx.putImageData(id, 0, 0);
-  ctx.fillStyle = 'rgba(0,0,225,0.01)';
-  ctx.fillRect(0,0, dimension, dimension);
+  ctx.fillStyle = "rgba(0,0,225,0.01)";
+  ctx.fillRect(0, 0, dimension, dimension);
   //step2();
   requestAnimationFrame(step);
 }

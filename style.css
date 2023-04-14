@@ -5,6 +5,7 @@ html,body{
   height: 100%;
   overflow: hidden;
   display:flex;
+  flex-direction: column;
   justify-content: center;
   background-color: rgb(100,0,0);
   align-items: center;
@@ -13,4 +14,15 @@ canvas {
   border: 1px solid red;
   width: 100vmin;
   height: 100vmin;
+}
+.settings {
+  position: absolute;
+  top:0;
+  left:0;
+  margin: 5px;
+  padding: 5px;
+}
+select{
+  margin: 5px;
+  padding: 5px;
 }
