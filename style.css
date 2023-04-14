@@ -11,6 +11,7 @@ html,body{
   justify-content: center;
   background-color: rgb(100,0,50);
   align-items: center;
+  color: white;
 }
 canvas {
   border: 1px solid red;
@@ -39,4 +40,9 @@ select {
   background-color: rgba(0,0,0,0.5);
   border: 1px solid red;
 }
-
+a{
+  color: white;
+  text-decoration: underline;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.5em;
+}
