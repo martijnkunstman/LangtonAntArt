@@ -29,6 +29,15 @@ dimensionSelect.addEventListener("change", function () {
   y = Math.round(dimension / 2);
   direction = 0;
 });
+let fade = true;
+let fadeSelect = document.getElementById("fader");
+fadeSelect.addEventListener("change", function () {
+  if (fadeSelect.value == "yes") {
+    fade = true;
+  } else {
+    fade = false;
+  }
+});
 
 let stepsSelect = document.getElementById("stepsAtOnce");
 stepsSelect.addEventListener("change", function () {
@@ -111,8 +120,10 @@ function step() {
     }
   }
   ctx.putImageData(id, 0, 0);
-  ctx.fillStyle = "rgba(0,0,225,0.01)";
-  ctx.fillRect(0, 0, dimension, dimension);
+  if (fade) {
+    ctx.fillStyle = "rgba(0,0,225,0.01)";
+    ctx.fillRect(0, 0, dimension, dimension);
+  }
   //step2();
   requestAnimationFrame(step);
 }
