@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 html,body{
+  font-family: 'Roboto Mono', monospace;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -22,7 +24,19 @@ canvas {
   margin: 5px;
   padding: 5px;
 }
-select{
+label{
   margin: 5px;
   padding: 5px;
+  font-family: 'Roboto Mono', monospace;
+  margin-right: 0;
+  color: white;
 }
+select {
+  margin: 5px;
+  padding: 5px;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  border: 1px solid red;
+}
+
