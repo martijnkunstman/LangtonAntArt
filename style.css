@@ -6,7 +6,8 @@ html,body{
   overflow: hidden;
   display:flex;
   justify-content: center;
-  background-color: blue;
+  background-color: rgb(100,0,0);
+  align-items: center;
 }
 canvas {
   border: 1px solid red;
